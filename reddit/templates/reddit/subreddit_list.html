@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subreddits</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">All Subreddits</h1>
+        <ul class="list-group">
+            {% for subreddit in subreddits %}
+                <li class="list-group-item">
+                    <a href="{% url 'subreddit_detail' id=subreddit.id %}">{{ subreddit.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="text-center mt-4">
+            <a href="{% url 'create_subreddit' %}" class="btn btn-primary">Create New Subreddit</a>
+        </div>
+    </div>
+</body>
+</html>
